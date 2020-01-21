@@ -4,18 +4,26 @@ using UnityEngine;
 
 public class Adder : MonoBehaviour
 {
-    // Start is called before the first frame update
+    bool active;
+    public Canvas panelescritura;
+
     void Start()
     {
-      
-    }
-    public void add()
-    {
-    
-    }
-    // Update is called once per frame
-    void Update()
-    {
         
+        panelescritura.enabled = false;
+    }
+
+
+
+    public void Discard()
+    {
+        panelescritura.enabled = false;
+
+
+    }
+    public void Add()
+    {
+        panelescritura.enabled = true;
+
     }
 }
