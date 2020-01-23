@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Adder : MonoBehaviour
 {
+    public GameObject REset;
     bool active;
     public Canvas panelescritura;
 
@@ -24,6 +25,7 @@ public class Adder : MonoBehaviour
     public void Add()
     {
         panelescritura.enabled = true;
+        REset.SendMessage("REset");
 
     }
 }
