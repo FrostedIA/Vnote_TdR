@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class Adder : MonoBehaviour
 {
-    public GameObject REset;
+    public GameObject REset, REset2;
     bool active;
-    public Canvas panelescritura;
+    public Canvas panelescritura,panelescritura2;
 
     void Start()
     {
         
         panelescritura.enabled = false;
+        panelescritura2.enabled = false;
     }
 
 
@@ -19,13 +20,19 @@ public class Adder : MonoBehaviour
     public void Discard()
     {
         panelescritura.enabled = false;
-
+        panelescritura2.enabled = false;
 
     }
     public void Add()
     {
         panelescritura.enabled = true;
         REset.SendMessage("REset");
-
+      
+    }
+    public void Add2()
+    {
+        panelescritura2.enabled = true;
+       
+        REset2.SendMessage("REset2");
     }
 }
