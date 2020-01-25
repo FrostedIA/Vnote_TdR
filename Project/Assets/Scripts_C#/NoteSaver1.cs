@@ -5,10 +5,13 @@ using UnityEngine.UI;
 
 public class NoteSaver1 : MonoBehaviour
 {
+   
     public string ELTITOL;
     public string LANOTA;
     private bool able;
+    
     public GameObject theText1;
+    
 
 
 
@@ -16,6 +19,7 @@ public class NoteSaver1 : MonoBehaviour
     void Start()
     {
         {
+            
             able = true;
             notesaver1();
         }
@@ -24,16 +28,30 @@ public class NoteSaver1 : MonoBehaviour
     // Update is called once per frame
     public void notesaver1()
     {
-        if (able == true) 
-        { 
+        if (able == true)
+        {
             ELTITOL = PlayerPrefs.GetString("Title");
-       LANOTA = PlayerPrefs.GetString("Note");
+            LANOTA = PlayerPrefs.GetString("Note");
 
-        theText1.GetComponent<InputField>().text = ELTITOL;
+            theText1.GetComponent<InputField>().text = ELTITOL;
             able = false;
+           
         }
-      
-     
+    }
+     public void open()
+    {
+       // GameObject.FindGameObjectWithTag("MainCanvas").SendMessage("open");
+    }
+   
+    
+
+
+
+
+
+
+
+
     }
    
    
@@ -43,4 +61,4 @@ public class NoteSaver1 : MonoBehaviour
 
 
 
-}
+

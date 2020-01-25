@@ -613,7 +613,7 @@ GameObject:
   - component: {fileID: 2710518711790453600}
   m_Layer: 5
   m_Name: Note_Add (1)
-  m_TagString: Untagged
+  m_TagString: MainCanvas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -717,7 +717,6 @@ MonoBehaviour:
   Mtext: 
   note: {fileID: 1526842486660562126}
   note2: {fileID: 1526842486219133099}
-  itself: {fileID: 1526842486597394890}
   nota: {fileID: 5008972521557553762, guid: 1772931e08900fc429ce310fcc214b86, type: 3}
 --- !u!1 &1526842486660562126
 GameObject:

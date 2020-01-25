@@ -5,27 +5,65 @@ using UnityEngine.UI;
 
 public class NoteGenerator : MonoBehaviour
 {
+   
     public string Dtext;
     public string Mtext;
     public GameObject note;
     public GameObject note2;
-    public GameObject itself;
+    Canvas itself;
     public GameObject nota;
-
-
+    private bool can;
+    void Start()
+    {
+        itself = GetComponent<Canvas>();
+        can = true;
+    }
     public void Savenote()
     {
         Dtext = note.GetComponent<Text>().text;
         PlayerPrefs.SetString("Title", Dtext);
         Mtext = note2.GetComponent<Text>().text;
         PlayerPrefs.SetString("Note", Mtext);
-        GameObject one = Instantiate(nota, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
+       itself.enabled = false;
+        if (can == true)
+        {
+            GameObject one = Instantiate(nota, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
         one.transform.SetParent(GameObject.FindGameObjectWithTag("Note").transform, false);
-
+          
+        }
+     
     }
 public void Descartar()
     {
-        Destroy(itself);
+        itself.enabled = false;
 
     }
+    public void open()
+    {
+        itself.enabled = true;
+        can = false;
+
+
+
+
+
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -189,6 +189,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdd731961d2688a4f9602b94db5d9239, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  NoteGenerator: {fileID: 2710518711790453600, guid: cb3e020d01d6f03459aea5222709e9c1,
+    type: 3}
   ELTITOL: 
   LANOTA: 
   theText1: {fileID: 5008972521934559397}
@@ -448,7 +450,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1627586126238984820}
         m_MethodName: SendMessage
         m_Mode: 5
         m_Arguments:
@@ -456,6 +458,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Add2
+          m_StringArgument: open
           m_BoolArgument: 0
         m_CallState: 2
