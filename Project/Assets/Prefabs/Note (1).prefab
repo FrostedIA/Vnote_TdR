@@ -89,10 +89,9 @@ GameObject:
   - component: {fileID: 5008972521557553759}
   - component: {fileID: 5008972521557553756}
   - component: {fileID: 5008972521557553757}
-  - component: {fileID: 1627586126238984820}
   m_Layer: 5
   m_Name: Note (1)
-  m_TagString: Untagged
+  m_TagString: NoteSaver1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,23 +176,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &1627586126238984820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5008972521557553762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bdd731961d2688a4f9602b94db5d9239, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  NoteGenerator: {fileID: 2710518711790453600, guid: cb3e020d01d6f03459aea5222709e9c1,
-    type: 3}
-  ELTITOL: 
-  LANOTA: 
-  theText1: {fileID: 5008972521934559397}
 --- !u!1 &5008972521934559397
 GameObject:
   m_ObjectHideFlags: 0
@@ -206,6 +188,7 @@ GameObject:
   - component: {fileID: 5008972521934559393}
   - component: {fileID: 5008972521934559398}
   - component: {fileID: 5008972521934559399}
+  - component: {fileID: 7121704813325371350}
   m_Layer: 5
   m_Name: d
   m_TagString: Untagged
@@ -231,7 +214,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.1, y: 206}
+  m_AnchoredPosition: {x: -0.1000061, y: 8}
   m_SizeDelta: {x: 522.1, y: 64.9}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5008972521934559393
@@ -333,6 +316,21 @@ MonoBehaviour:
   m_CaretBlinkRate: 0.85
   m_CaretWidth: 1
   m_ReadOnly: 0
+--- !u!114 &7121704813325371350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5008972521934559397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bdd731961d2688a4f9602b94db5d9239, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ELTITOL: 
+  LANOTA: 
+  theText1: {fileID: 5008972521934559397}
 --- !u!1 &5008972522670086398
 GameObject:
   m_ObjectHideFlags: 0
@@ -450,7 +448,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1627586126238984820}
+      - m_Target: {fileID: 7121704813325371350}
         m_MethodName: SendMessage
         m_Mode: 5
         m_Arguments:
@@ -458,6 +456,6 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: open
+          m_StringArgument: openn
           m_BoolArgument: 0
         m_CallState: 2

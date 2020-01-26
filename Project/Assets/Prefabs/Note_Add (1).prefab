@@ -611,9 +611,10 @@ GameObject:
   - component: {fileID: 1526842486597394892}
   - component: {fileID: 1526842486597394893}
   - component: {fileID: 2710518711790453600}
+  - component: {fileID: 1988256734086741701}
   m_Layer: 5
   m_Name: Note_Add (1)
-  m_TagString: MainCanvas
+  m_TagString: NoteGenerator
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -638,9 +639,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 43193, y: 58860}
+  m_AnchoredPosition: {x: 43193, y: 102964.17}
   m_SizeDelta: {x: 540, y: 810}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.87812203}
 --- !u!223 &1526842486597394895
 Canvas:
   m_ObjectHideFlags: 0
@@ -718,6 +719,18 @@ MonoBehaviour:
   note: {fileID: 1526842486660562126}
   note2: {fileID: 1526842486219133099}
   nota: {fileID: 5008972521557553762, guid: 1772931e08900fc429ce310fcc214b86, type: 3}
+--- !u!114 &1988256734086741701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1526842486597394890}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c230da092444bb84aa13b796370ff0de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1526842486660562126
 GameObject:
   m_ObjectHideFlags: 0

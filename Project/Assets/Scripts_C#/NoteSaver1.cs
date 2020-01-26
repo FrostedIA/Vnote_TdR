@@ -9,7 +9,7 @@ public class NoteSaver1 : MonoBehaviour
     public string ELTITOL;
     public string LANOTA;
     private bool able;
-    
+    private bool can;
     public GameObject theText1;
     
 
@@ -19,7 +19,7 @@ public class NoteSaver1 : MonoBehaviour
     void Start()
     {
         {
-            
+            can = false;
             able = true;
             notesaver1();
         }
@@ -38,23 +38,64 @@ public class NoteSaver1 : MonoBehaviour
            
         }
     }
-     public void open()
+  public void openn()
     {
-       // GameObject.FindGameObjectWithTag("MainCanvas").SendMessage("open");
+        can = true;
     }
-   
-    
+    public void Set()
+    {
+        ELTITOL = PlayerPrefs.GetString("Title");
+        LANOTA = PlayerPrefs.GetString("Note");
 
-
-
-
-
-
-
-
+        theText1.GetComponent<InputField>().text = ELTITOL;
     }
-   
-   
+
+
+
+    void Update()
+    {
+        FindClosestEnemy();
+       
+    }
+
+    void FindClosestEnemy()
+    {
+        float distanceToClosestEnemy = Mathf.Infinity;
+       NoteGenerator closestEnemy = null;
+       NoteGenerator[] allEnemies = GameObject.FindObjectsOfType<NoteGenerator>();
+      
+        foreach (NoteGenerator currentEnemy in allEnemies)
+        {
+            float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            if (distanceToEnemy < distanceToClosestEnemy)
+            {
+                distanceToClosestEnemy = distanceToEnemy;
+                closestEnemy = currentEnemy;
+             if (can == true)
+                { 
+                    closestEnemy.SendMessage("open");
+                    can = false;
+                
+                }
+               
+            }
+        }
+
+        Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+    }
+
+
+
+
+
+
+
+
+
+
+}
+
+
 
 
 

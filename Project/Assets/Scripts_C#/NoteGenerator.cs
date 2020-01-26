@@ -13,10 +13,12 @@ public class NoteGenerator : MonoBehaviour
     Canvas itself;
     public GameObject nota;
     private bool can;
+    public bool able;
     void Start()
     {
         itself = GetComponent<Canvas>();
         can = true;
+
     }
     public void Savenote()
     {
@@ -25,6 +27,7 @@ public class NoteGenerator : MonoBehaviour
         Mtext = note2.GetComponent<Text>().text;
         PlayerPrefs.SetString("Note", Mtext);
        itself.enabled = false;
+        able = true;
         if (can == true)
         {
             GameObject one = Instantiate(nota, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
@@ -42,14 +45,38 @@ public void Descartar()
     {
         itself.enabled = true;
         can = false;
-
-
-
-
-
+    }
+    void Update()
+    {
+        FindClosestEnemy2();
 
     }
 
+    void FindClosestEnemy2()
+    {
+        float distanceToClosestEnemy = Mathf.Infinity;
+       NoteSaver1 closestEnemy = null;
+        NoteSaver1[] allEnemies = GameObject.FindObjectsOfType<NoteSaver1>();
+
+        foreach (NoteSaver1 currentEnemy in allEnemies)
+        {
+            float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
+            if (distanceToEnemy < distanceToClosestEnemy)
+            {
+                distanceToClosestEnemy = distanceToEnemy;
+                closestEnemy = currentEnemy;
+                if (able == true)
+                {
+                    closestEnemy.SendMessage("Set");
+                    able = false;
+
+                }
+
+            }
+        }
+
+        Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+    }
 
 
 
