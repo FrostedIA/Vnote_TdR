@@ -8,15 +8,15 @@ public class NOTECREATOR : MonoBehaviour
     
    
     public GameObject Panel;
-    
-    public int Taps;
-    private int NumOfTaps = 10;
+    public Transform place;
+    public int Taps = 4;
+    private int NumOfTaps = 1;
     
     public void Plus()
     {
 
 
-        GameObject one = Instantiate(Panel, new Vector3(0,Taps, 0), Quaternion.identity) as GameObject;
+        GameObject one = Instantiate(Panel, place.position, Quaternion.identity) as GameObject;
         one.transform.SetParent(GameObject.FindGameObjectWithTag("Note").transform, false);
                    
 
@@ -30,7 +30,7 @@ public class NOTECREATOR : MonoBehaviour
     public void touches(int NumOfTaps)
     {
         Taps -= NumOfTaps;
-        
+       place.transform.position = new Vector3(0,Taps, 0);
 
 
 

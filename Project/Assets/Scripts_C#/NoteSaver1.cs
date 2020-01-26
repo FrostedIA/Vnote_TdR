@@ -18,11 +18,11 @@ public class NoteSaver1 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        {
-            can = false;
+        
+        can = false;
             able = true;
             notesaver1();
-        }
+        
     }
 
     // Update is called once per frame
@@ -63,7 +63,7 @@ public class NoteSaver1 : MonoBehaviour
         float distanceToClosestEnemy = Mathf.Infinity;
        NoteGenerator closestEnemy = null;
        NoteGenerator[] allEnemies = GameObject.FindObjectsOfType<NoteGenerator>();
-      
+     
         foreach (NoteGenerator currentEnemy in allEnemies)
         {
             float distanceToEnemy = (currentEnemy.transform.position - this.transform.position).sqrMagnitude;
@@ -71,9 +71,11 @@ public class NoteSaver1 : MonoBehaviour
             {
                 distanceToClosestEnemy = distanceToEnemy;
                 closestEnemy = currentEnemy;
+                
              if (can == true)
                 { 
                     closestEnemy.SendMessage("open");
+
                     can = false;
                 
                 }

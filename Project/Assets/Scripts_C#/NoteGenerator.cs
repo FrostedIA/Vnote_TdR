@@ -14,8 +14,10 @@ public class NoteGenerator : MonoBehaviour
     public GameObject nota;
     private bool can;
     public bool able;
+   
     void Start()
     {
+        
         itself = GetComponent<Canvas>();
         can = true;
 
