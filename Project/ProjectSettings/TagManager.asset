@@ -8,6 +8,7 @@ TagManager:
   - MainCanvas
   - NoteGenerator
   - NoteSaver1
+  - Note2
   layers:
   - Default
   - TransparentFX

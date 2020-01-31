@@ -10,15 +10,17 @@ public class NoteGenerator : MonoBehaviour
     public string Mtext;
     public GameObject note;
     public GameObject note2;
-    Canvas itself;
+   public GameObject itself;
     public GameObject nota;
     private bool can;
+    private bool StartResearch;
+    
     public bool able;
    
     void Start()
     {
         
-        itself = GetComponent<Canvas>();
+       
         can = true;
 
     }
@@ -28,30 +30,38 @@ public class NoteGenerator : MonoBehaviour
         PlayerPrefs.SetString("Title", Dtext);
         Mtext = note2.GetComponent<Text>().text;
         PlayerPrefs.SetString("Note", Mtext);
-       itself.enabled = false;
+       itself.SetActive(false);
         able = true;
+        
+        StartResearch = true;
         if (can == true)
         {
             GameObject one = Instantiate(nota, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-        one.transform.SetParent(GameObject.FindGameObjectWithTag("Note").transform, false);
+        one.transform.SetParent(GameObject.FindGameObjectWithTag("Note2").transform, false);
           
         }
      
     }
 public void Descartar()
     {
-        itself.enabled = false;
+        itself.SetActive(false);
 
     }
     public void open()
     {
-        itself.enabled = true;
+        itself.SetActive(true);
+       
         can = false;
     }
     void Update()
     {
-        FindClosestEnemy2();
+    if (StartResearch == true)
+            { 
+            
+            FindClosestEnemy2();
 
+}
+       
     }
 
     void FindClosestEnemy2()

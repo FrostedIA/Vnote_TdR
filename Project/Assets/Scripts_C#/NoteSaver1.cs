@@ -34,6 +34,7 @@ public class NoteSaver1 : MonoBehaviour
             LANOTA = PlayerPrefs.GetString("Note");
 
             theText1.GetComponent<InputField>().text = ELTITOL;
+           
             able = false;
            
         }
@@ -46,7 +47,7 @@ public class NoteSaver1 : MonoBehaviour
     {
         ELTITOL = PlayerPrefs.GetString("Title");
         LANOTA = PlayerPrefs.GetString("Note");
-
+ Debug.Log("wtf");
         theText1.GetComponent<InputField>().text = ELTITOL;
     }
 
