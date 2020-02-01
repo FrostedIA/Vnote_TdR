@@ -12,6 +12,7 @@ public class NoteSaver1 : MonoBehaviour
     private bool can;
     public GameObject theText1;
     public Transform ell;
+    public Animator anim;
     
 
 
@@ -43,6 +44,7 @@ public class NoteSaver1 : MonoBehaviour
   public void openn()
     {
         can = true;
+       
     }
     public void Set()
     {
@@ -50,14 +52,15 @@ public class NoteSaver1 : MonoBehaviour
         LANOTA = PlayerPrefs.GetString("Note");
 
         theText1.GetComponent<InputField>().text = ELTITOL;
+       
     }
 
     public void Baixa()
 
     {
-        ell.Translate(Vector3.down * 200);
+        ell.Translate(Vector3.down *230);
 
-        Debug.Log("sep");
+       
     }
 
     void Update()
@@ -71,10 +74,17 @@ public class NoteSaver1 : MonoBehaviour
         {
             Baixa();
         }
+        
+
+
+
+
+
+
     }
     void FindClosestEnemy()
     {
-        float distanceToClosestEnemy = Mathf.Infinity;
+        float distanceToClosestEnemy = 400;
        NoteGenerator closestEnemy = null;
        NoteGenerator[] allEnemies = GameObject.FindObjectsOfType<NoteGenerator>();
      

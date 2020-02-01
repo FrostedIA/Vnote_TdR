@@ -11,10 +11,10 @@ public class NoteGenerator : MonoBehaviour
     public GameObject note;
     public GameObject note2;
    public GameObject itself;
-
-
-    private bool StartResearch;
-    
+    public GameObject nota;
+    private bool can;
+    private bool Search;
+    public Collider2D colir;
     public bool able;
 
    
@@ -24,9 +24,10 @@ public class NoteGenerator : MonoBehaviour
     void Start()
     {
 
-       
-      
+        colir.isTrigger = false;
 
+        can = true;
+        Search = false;
     }
    
 
@@ -39,10 +40,15 @@ public class NoteGenerator : MonoBehaviour
         PlayerPrefs.SetString("Note", Mtext);
        itself.SetActive(false);
         able = true;
-     StartResearch = true;
-      
+        colir.isTrigger = true;
 
-     
+
+        if (can == true)
+        { 
+            GameObject one = Instantiate(nota, new Vector3(0, 417, 0), Quaternion.identity) as GameObject;
+        one.transform.SetParent(GameObject.FindGameObjectWithTag("Note2").transform, false);
+            Search = true; can = false;
+        }
      
     }
 
@@ -60,20 +66,22 @@ public class NoteGenerator : MonoBehaviour
     public void Descartar()
     {
         itself.SetActive(false);
-
+        Search = false;
     }
     public void open()
     {
         itself.SetActive(true);
-       
+        
         
     }
     void Update()
     {
- if (StartResearch == true)
-        { 
-         FindClosestEnemy2();
+ if (Search == true)
+        {
+            FindClosestEnemy2();
+        
         }
+         
     } 
         
      void OnCollisionEnter2D(Collision2D col)
@@ -81,7 +89,15 @@ public class NoteGenerator : MonoBehaviour
         if (col.gameObject.tag == "Daon")
         {
             Baixa();
+            
         }
+       
+
+
+
+
+
+
     }
        
         
@@ -90,7 +106,7 @@ public class NoteGenerator : MonoBehaviour
 
     void FindClosestEnemy2()
     {
-        float distanceToClosestEnemy = Mathf.Infinity;
+        float distanceToClosestEnemy = 400;
        NoteSaver1 closestEnemy = null;
         NoteSaver1[] allEnemies = GameObject.FindObjectsOfType<NoteSaver1>();
 
@@ -103,6 +119,7 @@ public class NoteGenerator : MonoBehaviour
                 closestEnemy = currentEnemy;
                 if (able == true)
                 {
+                    
                     closestEnemy.SendMessage("Set");
                     able = false;
 
