@@ -9,6 +9,7 @@ TagManager:
   - NoteGenerator
   - NoteSaver1
   - Note2
+  - Daon
   layers:
   - Default
   - TransparentFX

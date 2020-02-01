@@ -5,44 +5,59 @@ using UnityEngine.UI;
 
 public class NoteGenerator : MonoBehaviour
 {
-   
+    public Transform clic;
     public string Dtext;
     public string Mtext;
     public GameObject note;
     public GameObject note2;
    public GameObject itself;
-    public GameObject nota;
-    private bool can;
+
+
     private bool StartResearch;
     
     public bool able;
+
    
+
+
+
     void Start()
     {
-        
+
        
-        can = true;
+      
 
     }
+   
+
     public void Savenote()
     {
+        
         Dtext = note.GetComponent<Text>().text;
         PlayerPrefs.SetString("Title", Dtext);
         Mtext = note2.GetComponent<Text>().text;
         PlayerPrefs.SetString("Note", Mtext);
        itself.SetActive(false);
         able = true;
-        
-        StartResearch = true;
-        if (can == true)
-        {
-            GameObject one = Instantiate(nota, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-        one.transform.SetParent(GameObject.FindGameObjectWithTag("Note2").transform, false);
-          
-        }
+     StartResearch = true;
+      
+
+     
      
     }
-public void Descartar()
+
+
+
+    public void Baixa()
+
+    {
+        clic.Translate(Vector3.down * 200);
+
+
+    }
+
+
+    public void Descartar()
     {
         itself.SetActive(false);
 
@@ -51,18 +66,27 @@ public void Descartar()
     {
         itself.SetActive(true);
        
-        can = false;
+        
     }
     void Update()
     {
-    if (StartResearch == true)
-            { 
-            
-            FindClosestEnemy2();
-
-}
-       
+ if (StartResearch == true)
+        { 
+         FindClosestEnemy2();
+        }
+    } 
+        
+     void OnCollisionEnter2D(Collision2D col)
+        {
+        if (col.gameObject.tag == "Daon")
+        {
+            Baixa();
+        }
     }
+       
+        
+       
+    
 
     void FindClosestEnemy2()
     {
@@ -88,6 +112,12 @@ public void Descartar()
         }
 
         Debug.DrawLine(this.transform.position, closestEnemy.transform.position);
+
+        
+
+
+
+
     }
 
 

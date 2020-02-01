@@ -11,6 +11,7 @@ public class NoteSaver1 : MonoBehaviour
     private bool able;
     private bool can;
     public GameObject theText1;
+    public Transform ell;
     
 
 
@@ -32,7 +33,7 @@ public class NoteSaver1 : MonoBehaviour
         {
             ELTITOL = PlayerPrefs.GetString("Title");
             LANOTA = PlayerPrefs.GetString("Note");
-
+         
             theText1.GetComponent<InputField>().text = ELTITOL;
            
             able = false;
@@ -47,18 +48,30 @@ public class NoteSaver1 : MonoBehaviour
     {
         ELTITOL = PlayerPrefs.GetString("Title");
         LANOTA = PlayerPrefs.GetString("Note");
- Debug.Log("wtf");
+
         theText1.GetComponent<InputField>().text = ELTITOL;
     }
 
+    public void Baixa()
 
+    {
+        ell.Translate(Vector3.down * 200);
+
+        Debug.Log("sep");
+    }
 
     void Update()
     {
         FindClosestEnemy();
        
     }
-
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.gameObject.tag == "Daon")
+        {
+            Baixa();
+        }
+    }
     void FindClosestEnemy()
     {
         float distanceToClosestEnemy = Mathf.Infinity;
