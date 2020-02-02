@@ -58,7 +58,7 @@ public class NoteSaver1 : MonoBehaviour
     public void Baixa()
 
     {
-        ell.Translate(Vector3.down *230);
+        ell.Translate(Vector3.down * 200);
 
        
     }
@@ -84,7 +84,7 @@ public class NoteSaver1 : MonoBehaviour
     }
     void FindClosestEnemy()
     {
-        float distanceToClosestEnemy = 400;
+        float distanceToClosestEnemy =1200;
        NoteGenerator closestEnemy = null;
        NoteGenerator[] allEnemies = GameObject.FindObjectsOfType<NoteGenerator>();
      

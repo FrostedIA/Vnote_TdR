@@ -24,7 +24,7 @@ public class NoteGenerator : MonoBehaviour
     void Start()
     {
 
-        colir.isTrigger = false;
+        colir.isTrigger = true;
 
         can = true;
         Search = false;
@@ -40,12 +40,12 @@ public class NoteGenerator : MonoBehaviour
         PlayerPrefs.SetString("Note", Mtext);
        itself.SetActive(false);
         able = true;
-        colir.isTrigger = true;
+        colir.isTrigger = false;
 
 
         if (can == true)
         { 
-            GameObject one = Instantiate(nota, new Vector3(0, 417, 0), Quaternion.identity) as GameObject;
+            GameObject one = Instantiate(nota, new Vector3(0, 400, 0), Quaternion.identity) as GameObject;
         one.transform.SetParent(GameObject.FindGameObjectWithTag("Note2").transform, false);
             Search = true; can = false;
         }
@@ -106,7 +106,7 @@ public class NoteGenerator : MonoBehaviour
 
     void FindClosestEnemy2()
     {
-        float distanceToClosestEnemy = 400;
+        float distanceToClosestEnemy = 1200;
        NoteSaver1 closestEnemy = null;
         NoteSaver1[] allEnemies = GameObject.FindObjectsOfType<NoteSaver1>();
 

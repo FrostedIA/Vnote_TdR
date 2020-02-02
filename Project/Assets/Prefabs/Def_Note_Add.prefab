@@ -75,7 +75,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1, y: 414}
+  m_AnchoredPosition: {x: 1, y: 400}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &622959973921252649
@@ -97,6 +97,7 @@ MonoBehaviour:
   note2: {fileID: 6831425091349775881}
   itself: {fileID: 1886909038718659523}
   nota: {fileID: 4281072919186887351, guid: 08f52f847dbb410428528eb33205d55c, type: 3}
+  colir: {fileID: 2733877354094740461}
   able: 0
 --- !u!61 &2733877354094740461
 BoxCollider2D:
@@ -143,7 +144,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 5
 --- !u!95 &8113797981050459294
 Animator:

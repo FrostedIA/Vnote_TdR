@@ -169,7 +169,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1.341217, y: 415.28815}
+  m_AnchoredPosition: {x: -1.341217, y: 442}
   m_SizeDelta: {x: 175.8, y: 28.3}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5324763490063005179
@@ -333,7 +333,7 @@ Rigidbody2D:
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 1
+  m_CollisionDetection: 0
   m_Constraints: 5
 --- !u!95 &7363340989144770518
 Animator:

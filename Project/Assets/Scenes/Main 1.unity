@@ -779,6 +779,7 @@ GameObject:
   - component: {fileID: 1158853060}
   - component: {fileID: 1158853059}
   - component: {fileID: 1158853058}
+  - component: {fileID: 1158853062}
   m_Layer: 0
   m_Name: DAon
   m_TagString: Daon
@@ -831,7 +832,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -112.03357, y: -509.45996}
+  m_Offset: {x: -279.50204, y: -1480.3594}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -842,7 +843,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1316.4905, y: 1627.0693}
+  m_Size: {x: 981.5535, y: 4763.179}
   m_EdgeRadius: 0
 --- !u!4 &1158853061
 Transform:
@@ -852,12 +853,33 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1158853057}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 112.99382, y: 561.3221, z: -4203.218}
+  m_LocalPosition: {x: 112.99382, y: 561.3221, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!50 &1158853062
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1158853057}
+  m_BodyType: 0
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 1
+  m_Constraints: 7
 --- !u!1 &1255788291
 GameObject:
   m_ObjectHideFlags: 0
