@@ -45,7 +45,7 @@ public class NoteGenerator : MonoBehaviour
 
         if (can == true)
         { 
-            GameObject one = Instantiate(nota, new Vector3(0,900, 0), Quaternion.identity) as GameObject;
+            GameObject one = Instantiate(nota, new Vector3(0,400, 0), Quaternion.identity) as GameObject;
         one.transform.SetParent(GameObject.FindGameObjectWithTag("Note2").transform, false);
             Search = true; can = false;
         }
