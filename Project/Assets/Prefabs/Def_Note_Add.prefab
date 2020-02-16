@@ -99,6 +99,7 @@ MonoBehaviour:
   nota: {fileID: 4281072919186887351, guid: 08f52f847dbb410428528eb33205d55c, type: 3}
   colir: {fileID: 2733877354094740461}
   able: 0
+  ell: {fileID: 6087719817186312275}
 --- !u!61 &2733877354094740461
 BoxCollider2D:
   m_ObjectHideFlags: 0

@@ -16,7 +16,7 @@ public class NoteGenerator : MonoBehaviour
     private bool Search;
     public Collider2D colir;
     public bool able;
-
+    public Transform ell;
    
 
 
@@ -71,7 +71,8 @@ public class NoteGenerator : MonoBehaviour
     public void open()
     {
         itself.SetActive(true);
-        
+        ell.position = new Vector3(0, -2, 1);
+
         
     }
     void Update()
