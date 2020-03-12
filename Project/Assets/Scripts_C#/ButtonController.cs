@@ -10,15 +10,13 @@ public class ButtonController : MonoBehaviour
     public GameObject theText;
     public void ClearText()
     {
+       
         theText1.GetComponent<InputField>().text = "";
         theText.GetComponent<InputField>().text = "";
 
+     
     }
 
-
-
-
-
-
+  
 
 }

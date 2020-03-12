@@ -10,19 +10,36 @@ public class NOTECREATOR : MonoBehaviour
     public GameObject ell;
     public int Ap;
     private int Hg = 1;
-    
+    private bool yes;
+
+
+
+
+
+
+    private void Start()
+    {
+        yes = true;
+    }
     public void Plus()
     {
-
-
-        GameObject one = Instantiate(Panel, new Vector3(0, 0, 0), Quaternion.identity) as GameObject;
-        one.transform.SetParent(GameObject.FindGameObjectWithTag("Note").transform, false);
- 
-  aixo(Hg);
-
+        if (yes == true)
+        {
+            GameObject one = Instantiate(Panel, new Vector3(0, -293, 0), Quaternion.identity) as GameObject;
+            one.transform.SetParent(GameObject.FindGameObjectWithTag("Note").transform, false);
+            Debug.Log("si");
+            aixo(Hg);
+             StartCoroutine(Patata());
+        }
 
     }
 
+    IEnumerator Patata()
+    {
+        yes = false;
+        yield return new WaitForSeconds(2f);
+        yes = true;
+    }
     public void aixo(int Hg)
     {
         Ap += Hg;
@@ -33,18 +50,18 @@ public class NOTECREATOR : MonoBehaviour
         }
     }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+

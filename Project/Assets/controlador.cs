@@ -11,11 +11,12 @@ public class controlador : MonoBehaviour
         anim.SetTrigger("Baixa");
     
     }
- 
+    public void reo()
 
-    //
-    
-    
-    
+    {
+        anim.SetTrigger("Puja");
+
+    }
    
-}
+
+    }
