@@ -16,7 +16,7 @@ public class NoteJson : MonoBehaviour
     public GameObject Thing;
     string filePath;
     public Animator Content;
-
+    public Animator DUAL;
 
     private List<sample1> checkNotes = new List<sample1>();
 
@@ -44,14 +44,22 @@ public class NoteJson : MonoBehaviour
 
     public void DELETE()
     {
+      
+        DUAL.SetTrigger("1");
         Content.SetTrigger("DELET");
     }
     public void NORMAL()
     {
+        
+        DUAL.SetTrigger("2");
         Content.SetTrigger("sfg");
     }
 
+    public void None()
+    {
 
+        SwitchMode(0);
+    }
 
 
 

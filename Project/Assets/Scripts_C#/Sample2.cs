@@ -42,6 +42,15 @@ public class Sample2 : MonoBehaviour
 
     }
 
+    public void UnSavenote()
+    {
+        CreateCheckNoteItem(NoteName, type);
+
+    }
+
+
+
+
     void CreateCheckNoteItem(string name, string type)
     {
         GameObject item = Instantiate(NotePrefab);
@@ -57,8 +66,17 @@ public class Sample2 : MonoBehaviour
         itemObject.SetObjecInfo(name, type, index);
         checkNotes.Add(itemObject);
         sample1 temp = itemObject;
+        itemObject.GetComponent<Button>().onClick.AddListener(delegate { CheckItem(temp); });
         SaveJSONdata();
         Destroy(Itself);
+    }
+
+    void CheckItem(sample1 item)
+    {
+        Debug.Log("clar");
+        checkNotes.Remove(item);
+        SaveJSONdata();
+        Destroy(item.gameObject);
     }
 
     public class ChecklistItem
