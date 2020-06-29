@@ -4,8 +4,12 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Note
-  - Content
+  - Ground
+  - Spike
+  - Button
+  - Bullet
+  - Stop
+  - Lvl2
   layers:
   - Default
   - TransparentFX
@@ -15,8 +19,8 @@ TagManager:
   - UI
   - 
   - 
-  - S
-  - f
+  - None
+  - re
   - 
   - 
   - 
@@ -42,16 +46,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: 1
-    uniqueID: 652660925
-    locked: 0
-  - name: 2
-    uniqueID: 1345400895
-    locked: 0
-  - name: 3
-    uniqueID: 836381961
-    locked: 0
-  - name: New Layer
-    uniqueID: 2276174945
     locked: 0
