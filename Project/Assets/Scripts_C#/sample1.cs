@@ -2,14 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.IO;
 
 public class sample1 : MonoBehaviour
 {
     public GameObject NotePanel;
     public GameObject Itself;
+    public Button Eliminador;
+    public Button Eliminador2;
     public string NoteName;
     public string type;
+    
     public int index1;
+
     private Text itemtext;
     public GameObject addPanel;
 
@@ -23,10 +28,11 @@ public class sample1 : MonoBehaviour
     public GameObject ru;
     public GameObject ru2;
 
+    public int num;
 
     private void Start()
     {
-        
+
         ru.GetComponent<InputField>().text = NoteName;
         ru2.GetComponent<InputField>().text = type;
 
@@ -37,13 +43,13 @@ public class sample1 : MonoBehaviour
         itemtext.text = NoteName;
         addInputFields = addPanel.GetComponentsInChildren<InputField>();
         createButton.onClick.AddListener(delegate { CreateCheckNoteItem(addInputFields[0].text, addInputFields[1].text); });
-    
+
 
 
     }
 
 
- 
+
     public void SetObjecInfo(string name, string type, int index)
     {
         this.NoteName = name;
@@ -60,7 +66,7 @@ public class sample1 : MonoBehaviour
 
         item.transform.SetParent(GameObject.FindGameObjectWithTag("Note").transform, false);
         item.transform.localScale = new Vector3(1, 1, 1);
-       Sample2 itemObject = item.GetComponent<Sample2>();
+        Sample2 itemObject = item.GetComponent<Sample2>();
         int index = index1;
         if (SA.Count > 0)
             index = SA.Count - 1;
@@ -68,19 +74,37 @@ public class sample1 : MonoBehaviour
 
         itemObject.SetObjecInfo(name, type, index);
         SA.Add(itemObject);
-       Sample2 temp = itemObject;
-        Destroy(Itself);
+        Sample2 temp = itemObject;
        
+        Destroy(Itself);
+
     }
 
-
-   
- 
-
-
-
-
-
     
+
+
+
+
+
+
+
+    private void Update()
+    {
+           num = PlayerPrefs.GetInt("indes");
+        if(index1 != num)
+        {
+            Itself.transform.SetParent(GameObject.FindGameObjectWithTag("Hidder").transform);
+
+
+        }
+        if(index1 == num)
+        {
+            Itself.transform.SetParent(GameObject.FindGameObjectWithTag("Content").transform);
+
+
+        }
+    }
+   
+
 
 }

@@ -16,20 +16,22 @@ public class Sample2 : MonoBehaviour
     public string Dtext;
     public string Mtext;
     public Button createButton;
-    private List<sample1> checkNotes = new List<sample1>();
+
+    public string ftitle;
+    public string fbody;
+
     public GameObject NotePrefab;
-    private InputField[] addInputFields;
+  
     public GameObject addPanel;
     public GameObject Itself;
-    string filePath;
+    
     void Start()
     {
-        filePath = Application.persistentDataPath + "/note.txt";
-        ru.GetComponent<InputField>().text =NoteName;
+      
+        ru.GetComponent<InputField>().text = NoteName;
         ru2.GetComponent<InputField>().text = type;
-        addInputFields = addPanel.GetComponentsInChildren<InputField>();
-        createButton.onClick.AddListener(delegate { CreateCheckNoteItem(addInputFields[0].text, addInputFields[1].text); });
-
+        ftitle = NoteName;
+        fbody = type;
     }
     public void Savenote()
     {
@@ -40,76 +42,18 @@ public class Sample2 : MonoBehaviour
         NoteName = Dtext;
         type = Mtext;
 
-    }
 
-    public void UnSavenote()
-    {
-        CreateCheckNoteItem(NoteName, type);
-
-    }
-
-
-
-
-    void CreateCheckNoteItem(string name, string type)
-    {
-        GameObject item = Instantiate(NotePrefab);
-
-        item.transform.SetParent(GameObject.FindGameObjectWithTag("Content").transform, false);
-        item.transform.localScale = new Vector3(1, 1, 1);
-        sample1 itemObject = item.GetComponent<sample1>();
-        int index = index1;
-        if (checkNotes.Count > 0)
-            index = checkNotes.Count - 1;
-
-        
-        itemObject.SetObjecInfo(name, type, index);
-        checkNotes.Add(itemObject);
-        sample1 temp = itemObject;
-        itemObject.GetComponent<Button>().onClick.AddListener(delegate { CheckItem(temp); });
-        SaveJSONdata();
+        PlayerPrefs.SetInt("chng", 1);
         Destroy(Itself);
     }
 
-    void CheckItem(sample1 item)
+    public void Discard()
     {
-        Debug.Log("clar");
-        checkNotes.Remove(item);
-        SaveJSONdata();
-        Destroy(item.gameObject);
-    }
+        PlayerPrefs.SetString("Title", ftitle);
+        PlayerPrefs.SetString("Note", fbody);
 
-    public class ChecklistItem
-    {
-        public string NoteName;
-        public string type;
-        public int index1;
-
-        public ChecklistItem(string name, string type, int index)
-        {
-            this.NoteName = name;
-            this.type = type;
-            this.index1 = index;
-
-
-        }
-
-
-
-
-    }
-
-    void SaveJSONdata()
-    {
-        string content = "";
-        for (int i = 0; i < checkNotes.Count; i++)
-        {
-            ChecklistItem temp = new ChecklistItem(checkNotes[i].NoteName, checkNotes[i].type, checkNotes[i].index1);
-            content += JsonUtility.ToJson(temp) + "\n";
-            Debug.Log("chi");
-        }
-        File.WriteAllText(filePath, content);
-
+        PlayerPrefs.SetInt("chng", 1);
+        Destroy(Itself);
 
     }
 
@@ -117,7 +61,10 @@ public class Sample2 : MonoBehaviour
 
 
 
-    public void SetObjecInfo(string name, string type, int index)
+
+
+
+        public void SetObjecInfo(string name, string type, int index)
     {
         this.NoteName = name;
         this.type = type;
@@ -128,3 +75,4 @@ public class Sample2 : MonoBehaviour
 
     }
 }
+

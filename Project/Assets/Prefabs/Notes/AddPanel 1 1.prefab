@@ -446,6 +446,7 @@ GameObject:
   - component: {fileID: 5177486198217533775}
   - component: {fileID: 2404513402637520736}
   - component: {fileID: 2289478579421556218}
+  - component: {fileID: 2534909944131967564}
   m_Layer: 9
   m_Name: AddPanel 1 1
   m_TagString: Untagged
@@ -532,10 +533,28 @@ MonoBehaviour:
   Dtext: 
   Mtext: 
   createButton: {fileID: 2493061809069909272}
-  NotePrefab: {fileID: 578034639262902450, guid: a66998cbdda5a4946bef8660d5f4c425,
-    type: 3}
+  NotePrefab: {fileID: 8529667499168992387, guid: a66998cbdda5a4946bef8660d5f4c425, type: 3}
   addPanel: {fileID: 7838266392109485112}
   Itself: {fileID: 5294374873832770468}
+--- !u!95 &2534909944131967564
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5294374873832770468}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 08ddd3dd4d07c54458a93d556bd5f99e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &5989693052694538684
 GameObject:
   m_ObjectHideFlags: 0
@@ -601,8 +620,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 6277956836419168671, guid: 9a175f6be732a424081bdf418330c336,
-    type: 3}
+  m_Sprite: {fileID: 6277956836419168671, guid: 9a175f6be732a424081bdf418330c336, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -657,7 +675,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2289478579421556218}
         m_TargetAssemblyTypeName: Sample2, Assembly-CSharp
-        m_MethodName: UnSavenote
+        m_MethodName: Discard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -732,8 +750,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7179256758451782793, guid: 9a175f6be732a424081bdf418330c336,
-    type: 3}
+  m_Sprite: {fileID: 7179256758451782793, guid: 9a175f6be732a424081bdf418330c336, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1021,8 +1038,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1198477067713850731, guid: 746432b46fb2a424fa2346b065a62a46,
-    type: 3}
+  m_Sprite: {fileID: -1198477067713850731, guid: 746432b46fb2a424fa2346b065a62a46, type: 3}
   m_Type: 1
   m_PreserveAspect: 0
   m_FillCenter: 1
