@@ -80,6 +80,7 @@ public class LongClick : MonoBehaviour,IPointerDownHandler,IPointerUpHandler
     private void Reset()
     {
         PointerDown = false;
+       
         HoldTimer = 0;
 
     }

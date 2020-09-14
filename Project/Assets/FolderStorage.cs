@@ -77,7 +77,7 @@ public class FolderStorage : MonoBehaviour
     public void setname()
     {
 
-
+        PlayerPrefs.SetInt("numicon", icons);
         PlayerPrefs.SetString("titol", NoteName);
         PlayerPrefs.SetInt("panel", 1);
         PlayerPrefs.SetInt("indes", num);

@@ -8,7 +8,11 @@ public class NoteJson : MonoBehaviour
 {
     public GameObject theText1;
     public GameObject theText;
-    
+
+    public Image spr;
+
+    public Sprite[] sprites;
+
     public Transform content;
     
     public GameObject addPanel;
@@ -25,6 +29,8 @@ public class NoteJson : MonoBehaviour
     
     public Animator Content;
     public Animator DUAL;
+
+    public int icons;
 
     private List<sample1> checkNotes = new List<sample1>();
 
@@ -152,8 +158,41 @@ public class NoteJson : MonoBehaviour
         taitel = PlayerPrefs.GetString("Title");
         boday = PlayerPrefs.GetString("Note");
 
+       icons = PlayerPrefs.GetInt("numicon");
 
         switcher = PlayerPrefs.GetInt("chng");
+        if (icons == 0)
+        {
+            spr.sprite = sprites[0];
+        }
+        if (icons == 1)
+        {
+            spr.sprite = sprites[1];
+        }
+        if (icons == 2)
+        {
+            spr.sprite = sprites[2];
+        }
+        if (icons == 3)
+        {
+            spr.sprite = sprites[3];
+        }
+        if (icons == 4)
+        {
+            spr.sprite = sprites[4];
+        }
+        if (icons == 5)
+        {
+            spr.sprite = sprites[5];
+        }
+        if (icons == 6)
+        {
+            spr.sprite = sprites[6];
+        }
+        if (icons == 7)
+        {
+            spr.sprite = sprites[7];
+        }
 
         if (loker == 1)
         {
